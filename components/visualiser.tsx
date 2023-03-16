@@ -34,8 +34,8 @@ const Visualiser: React.FC<VisualiserProps> = ({ array, algorithm }) => {
 
   const maxValue = Math.max(...sortedArray);
   let size = 500 / sortedArray.length;
-  if (size < .5) {
-    size = .5;
+  if (size < 1) {
+    size = 1;
   } else if (size > 5) {
     size = 5;
   }
