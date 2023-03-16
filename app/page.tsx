@@ -14,7 +14,7 @@ const Home: React.FC = () => {
   const [array, setArray] = useState<number[]>([]);
 
   const generateScrambledArray = (size: number, condition: string) => {
-    if (size < 3 || size > 2500) {
+    if (size < 3 || size > 5000) {
       throw new Error("Invalid array size");
     }
     const newArray = Array.from({ length: size }, (_, i) => i + 1);
@@ -66,12 +66,12 @@ const Home: React.FC = () => {
           <option value="Reverse">Reverse</option>
         </select>
 
-        <label className="m-4">{"Array size (3-2500)"}</label>
+        <label className="m-4">{"Array size (3-5000)"}</label>
         <input
           className="border border-gray-300 p-4 py-2 mx-4 rounded-md text-black"
           type="number"
           min="3"
-          max="2500"
+          max="5000"
           value={n}
           onChange={(e) => setN(parseInt(e.target.value))}
         />
