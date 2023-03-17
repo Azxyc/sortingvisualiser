@@ -29,7 +29,7 @@ const Visualiser: React.FC<VisualiserProps> = ({ array, algorithm }) => {
     };
 
     
-  }, [algorithm, array]);
+  }, [array]);
 
   const generateBlueShade = (value: number, max: number) => {
     const hue = 240;
