@@ -47,11 +47,11 @@ const Visualiser: React.FC<VisualiserProps> = ({ array, algorithm }) => {
   }
 
   return (
-    <div className="flex justify-center flex-wrap">
+    <div className="flex flex-wrap">
       {sortedArray.map((value, index) => (
         <div
           key={index}
-          className="flex items-center justify-center"
+          className="flex "
           style={{
             width: size + "rem",
             height: size + "rem",
