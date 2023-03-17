@@ -108,6 +108,43 @@ export const sortingAlgorithms = {
 
     return newArr;
   },
+  async cocktailShakerSort(
+    arr: number[],
+    onSwap?: SwapCallback
+  ): Promise<number[]> {
+    const newArr = [...arr];
+    let start = 0;
+    let end = newArr.length - 1;
+    let swapped = true;
+
+    while (swapped) {
+      swapped = false;
+
+      for (let i = start; i < end; i++) {
+        if (newArr[i] > newArr[i + 1]) {
+          await swap(newArr, i, i + 1, onSwap);
+          swapped = true;
+        }
+      }
+
+      if (!swapped) {
+        break;
+      }
+
+      end--;
+
+      for (let i = end - 1; i >= start; i--) {
+        if (newArr[i] > newArr[i + 1]) {
+          await swap(newArr, i, i + 1, onSwap);
+          swapped = true;
+        }
+      }
+
+      start++;
+    }
+
+    return newArr;
+  },
   async combSort(arr: number[], onSwap?: SwapCallback): Promise<number[]> {
     const newArr = [...arr];
     const n = newArr.length;

@@ -11,6 +11,7 @@ Supports:
 - Quicksort
 - Shellsort
 - Bubble sort
+- Cocktail shaker sort
 - Comb sort
 - Exchange sort
 - Counting sort
