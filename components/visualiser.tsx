@@ -8,10 +8,16 @@ interface VisualiserProps {
   algorithm: keyof typeof sortingAlgorithms;
 }
 
+
 const Visualiser: React.FC<VisualiserProps> = ({ array, algorithm }) => {
   const [sortedArray, setSortedArray] = useState<number[]>(array);
 
   useEffect(() => {
+    setSortedArray(array);
+    setTimeout(() => {
+      sortArray();
+      
+    }, 2000);
     const sortArray = async () => {
       const newArr = await sortingAlgorithms[algorithm](
         array,
@@ -22,7 +28,7 @@ const Visualiser: React.FC<VisualiserProps> = ({ array, algorithm }) => {
       setSortedArray(newArr);
     };
 
-    sortArray();
+    
   }, [algorithm, array]);
 
   const generateBlueShade = (value: number, max: number) => {
